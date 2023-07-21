@@ -2,26 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'roboto', sans-serif;
+}
+
+.shadow-searchbar {
+  box-shadow: 0 2px 6px 0 #00000026;
+}
+
+.shadow-popover {
+  box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.popover-parent {
+  @apply absolute top-[90px] left-[129px] transform -translate-x-1/2 z-50;
+}
+
+.popover-container {
+  @apply bg-white rounded-md p-4 shadow-popover;
+}
+
+.popover-box {
+  @apply space-y-2 h-full;
+}
+
+.home-layout {
+  @apply flex justify-center min-h-screen bg-gray-100 p-[35px];
+}
+
+.destination-item {
+  @apply flex mb-2 rounded-md space-x-1 cursor-pointer hover:bg-gray-100 items-center pl-4 py-1;
+}
+
+.searchbar-container {
+  @apply w-[1129px] h-[107px] rounded-[12px] px-[31px] py-[26px];
+}
+
+.button-search {
+  @apply self-center w-[114px] h-[40px] px-[32px] py-[12px] rounded-full bg-red-500 hover:bg-red-600 disabled:bg-[#B1ADA6] text-white text-base font-medium leading-[16px] text-center;
+}
+
+.flex-between {
+  @apply flex justify-between;
+}
+
+.text-input {
+  @apply h-[24px] border-none bg-transparent text-[16px] leading-[24px] font-[400] text-left tracking-normal number-input;
+}
+
+.text-error {
+  @apply text-[12px] font-[400] leading-[14px] tracking-normal text-left text-[#F64D42];
+}
+
+.text-medium {
+  @apply text-[16px] font-[500] leading-[22px] text-left text-[#0A0A0A];
+}
+
+.text-input-name {
+  @apply text-[14px] font-[500] leading-[14px] tracking-normal text-left text-[#555250];
+}
+
+.text-description {
+  @apply text-[14px] font-[400] leading-[18px] text-left text-[#96918B];
+}
+
+.text-room {
+  @apply text-[13px] font-[400] leading-[17px] text-left text-[#0A0A0A];
+}
+
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
